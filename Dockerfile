@@ -4,6 +4,9 @@ FROM openjdk:17-jdk-alpine
 # Add a volume to store logs
 VOLUME /tmp
 
+# build the project
+RUN ./gradlew bootJar
+
 # Copy the JAR file from the build directory to the Docker image
 COPY build/libs/Clinics-0.0.1-SNAPSHOT.jar app.jar
 
