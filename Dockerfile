@@ -1,5 +1,5 @@
-# Use a base image with Java 17
-FROM openjdk:17-jdk-alpine
+# Stage 1: Build the JAR file
+FROM openjdk:21-jdk AS build
 
 # Add a volume to store logs
 VOLUME /tmp
