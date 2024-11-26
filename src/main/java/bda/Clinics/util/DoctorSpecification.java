@@ -71,4 +71,8 @@ public class DoctorSpecification {
             return query.getRestriction();
         };
     }
+
+    public static Specification<Doctor> isActive() {
+        return (doctorRoot, query, criteriaBuilder) -> criteriaBuilder.equal(doctorRoot.get("isActive"), true);
+    }
 }

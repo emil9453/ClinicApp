@@ -14,4 +14,6 @@ public interface ClinicRepository extends JpaRepository<Clinic,Long> {
     List<Clinic> findByIsActiveFalse();
 
     Optional<Clinic> findByClinicNameAndDoctors_DoctorId(String clinicName, Long doctorId);
+
+    Optional<Clinic> findByClinicNameAndIsActiveTrue(java.lang.String clinicName);
 }

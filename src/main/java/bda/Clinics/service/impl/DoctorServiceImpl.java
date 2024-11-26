@@ -478,7 +478,7 @@ public class DoctorServiceImpl implements DoctorService {
         if (doctorDto.getClinics() != null && !doctorDto.getClinics().isEmpty()) {
             for (RequestClinicDto clinicDto : doctorDto.getClinics()) {
                 // Check if the clinic exists by name or other criteria; if not, create a new one
-                Clinic clinic = clinicRepository.findByClinicName(clinicDto.getClinicName())
+                Clinic clinic = clinicRepository.findByClinicNameAndIsActiveTrue(clinicDto.getClinicName())
                         .orElseGet(() -> {
                             Clinic newClinic = new Clinic();
                             newClinic.setClinicName(clinicDto.getClinicName());
