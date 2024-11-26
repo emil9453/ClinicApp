@@ -1,5 +1,5 @@
-# Stage 1: Build the JAR file
-FROM openjdk:17-jdk-buster AS build
+# Use a base image with Java 17
+FROM openjdk:17-jdk-alpine
 
 # Add a volume to store logs
 VOLUME /tmp
