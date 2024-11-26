@@ -1,5 +1,5 @@
 # Stage 1: Build the JAR file
-FROM openjdk:17-jdk-alpine AS build
+FROM openjdk:17-jdk AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -7,11 +7,14 @@ WORKDIR /app
 # Copy the project files into the container
 COPY . .
 
+# Install necessary tools for Gradle
+RUN apt-get update && apt-get install -y bash curl unzip && rm -rf /var/lib/apt/lists/*
+
 # Make the Gradle wrapper executable
 RUN chmod +x ./gradlew
 
 # Build the Spring Boot application
-RUN ./gradlew bootJar
+RUN ./gradlew bootJar --no-daemon
 
 # Stage 2: Run the application
 FROM openjdk:17-jdk-alpine
