@@ -24,12 +24,12 @@ public class LocationOperation {
     private final GeoApiContext geoApiContext;
 
     private static final String GEOCODING_API_URL = "https://maps.googleapis.com/maps/api/geocode/json";
-    private static final String API_KEY = "AIzaSyCt-YiA9TJ2hNVuVWbytkAcbqEMga-nGLs"; // Add your Google API key here
+    private static final String API_KEY = "AIzaSyAo1hCUnTpVTfjsyYrjGSjlhnIW6gsQjN8"; // Add your Google API key here
 
 
     public LocationOperation() {
         this.geoApiContext = new GeoApiContext.Builder()
-                .apiKey("AIzaSyCt-YiA9TJ2hNVuVWbytkAcbqEMga-nGLs") // Replace with your API key
+                .apiKey("AIzaSyAo1hCUnTpVTfjsyYrjGSjlhnIW6gsQjN8") // Replace with your API key
                 .build();
     }
 
